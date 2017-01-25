@@ -1,0 +1,44 @@
+{
+  "name": "remark-external-links",
+  "version": "1.0.0",
+  "description": "Automatically add target et rel attributes on external links",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuopled/remark-external-links.git"
+  },
+  "keywords": [
+    "markdown",
+    "remark",
+    "plugin",
+    "link",
+    "url"
+  ],
+  "author": "Cédric Delpoux <xuopled@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuopled/remark-external-links/issues"
+  },
+  "homepage": "https://github.com/xuopled/remark-external-links#readme",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "babel ./src --out-dir ./lib --ignore /__tests__/",
+    "lint": "eslint src/",
+    "prepublish": "npm run clean && npm run build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.22.2",
+    "babel-eslint": "~7.1.1",
+    "babel-plugin-transform-object-rest-spread": "~6.22.0",
+    "babel-preset-es2015": "~6.22.0",
+    "eslint": "~3.14.0",
+    "jest": "~18.1.0",
+    "remark": "~6.2.0",
+    "remark-html": "~5.1.0",
+    "unist-util-select": "~1.5.0"
+  }
+}
