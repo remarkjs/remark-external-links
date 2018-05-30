@@ -4,7 +4,7 @@ const isRelativeUrlRegex = /^[^\/]+\/[^\/].*$|^\/[^\/].*$/
 const defaultTarget = "_blank"
 const defaultRel = "nofollow noopener noreferrer"
 
-function remarkExternalLinks(_, options = {}) {
+function remarkExternalLinks(options = {}) {
   return (ast) => {
     select(ast, "link").forEach((node) => {
       if (!isRelativeUrlRegex.test(node.url)) {
