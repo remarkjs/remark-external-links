@@ -1,6 +1,6 @@
 {
   "name": "remark-external-links",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Automatically adds the target and rel attributes to external links",
   "repository": {
     "type": "git",
