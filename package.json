@@ -2,10 +2,7 @@
   "name": "remark-external-links",
   "version": "2.0.0",
   "description": "Automatically adds the target and rel attributes to external links",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xuopled/remark-external-links.git"
-  },
+  "license": "MIT",
   "keywords": [
     "markdown",
     "remark",
@@ -13,22 +10,19 @@
     "link",
     "url"
   ],
+  "repository": "remarkjs/remark-external-links",
+  "bugs": "https://github.com/remarkjs/remark-external-links/issues",
   "author": "Cédric Delpoux <xuopled@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xuopled/remark-external-links/issues"
-  },
-  "homepage": "https://github.com/xuopled/remark-external-links#readme",
+  "contributors": [
+    "Cédric Delpoux <xuopled@gmail.com>",
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
-  "scripts": {
-    "clean": "rm -rf lib",
-    "build": "babel ./src --out-dir ./lib --ignore /__tests__/",
-    "lint": "eslint src/",
-    "prepublish": "npm run clean && npm run build",
-    "test": "jest"
+  "dependencies": {
+    "unist-util-select": "~1.5.0"
   },
   "devDependencies": {
     "babel-cli": "~6.26.0",
@@ -40,7 +34,11 @@
     "remark": "~9.0.0",
     "remark-html": "~8.0.0"
   },
-  "dependencies": {
-    "unist-util-select": "~1.5.0"
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "babel ./src --out-dir ./lib --ignore /__tests__/",
+    "lint": "eslint src/",
+    "prepublish": "npm run clean && npm run build",
+    "test": "jest"
   }
 }
