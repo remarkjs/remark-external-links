@@ -36,7 +36,18 @@
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "test-api": "jest",
-    "test": "npm run format && npm run test-api"
+    "test-coverage": "jest --collectCoverage",
+    "test": "npm run format && npm run test-coverage"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "prettier": {
     "tabWidth": 2,

@@ -2,25 +2,30 @@
 
 exports[`should add a rel 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" rel=\\"nofollow\\">remark</a></p>
+<p><a href=\\"./example.md\\">relative link</a></p>
 "
 `;
 
 exports[`should add a target 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\">remark</a></p>
+<p><a href=\\"./example.md\\">relative link</a></p>
 "
 `;
 
 exports[`should add both 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow\\">remark</a></p>
+<p><a href=\\"./example.md\\">relative link</a></p>
 "
 `;
 
 exports[`should add the defaults when without options 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark</a></p>
+<p><a href=\\"./example.md\\">relative link</a></p>
 "
 `;
 
 exports[`should do nothing if both are set to false 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\">remark</a></p>
+<p><a href=\\"./example.md\\">relative link</a></p>
 "
 `;

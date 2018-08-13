@@ -4,7 +4,11 @@ var remark = require('remark')
 var html = require('remark-html')
 var externalLinks = require('..')
 
-var input = '[remark](https://github.com/remarkjs/remark)'
+var input = [
+  '[remark](https://github.com/remarkjs/remark)',
+  '',
+  '[relative link](./example.md)'
+].join('\n')
 
 test('should add the defaults when without options', async () => {
   expect(
