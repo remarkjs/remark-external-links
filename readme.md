@@ -81,7 +81,7 @@ The value is a space-separated list of [link types](https://developer.mozilla.or
 
 ## Changelog
 
-See [changelog](./CHANGELOG.md)
+See [changelog](./changelog.md)
 
 
 ## Contributing
