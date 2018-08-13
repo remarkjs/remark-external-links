@@ -10,7 +10,7 @@ var input = [
   '[relative link](./example.md)'
 ].join('\n')
 
-test('should add the defaults when without options', async () => {
+test('should add the defaults when without options', function() {
   expect(
     remark()
       .use(externalLinks)
@@ -20,7 +20,7 @@ test('should add the defaults when without options', async () => {
   ).toMatchSnapshot()
 })
 
-test('should do nothing if both are set to false', async () => {
+test('should do nothing if both are set to false', function() {
   expect(
     remark()
       .use(externalLinks, {target: false, rel: false})
@@ -30,7 +30,7 @@ test('should do nothing if both are set to false', async () => {
   ).toMatchSnapshot()
 })
 
-test('should add a target', async () => {
+test('should add a target', function() {
   expect(
     remark()
       .use(externalLinks, {target: '_blank', rel: false})
@@ -40,7 +40,7 @@ test('should add a target', async () => {
   ).toMatchSnapshot()
 })
 
-test('should add a rel', async () => {
+test('should add a rel', function() {
   expect(
     remark()
       .use(externalLinks, {target: false, rel: 'nofollow'})
@@ -50,7 +50,7 @@ test('should add a rel', async () => {
   ).toMatchSnapshot()
 })
 
-test('should add both', async () => {
+test('should add both', function() {
   expect(
     remark()
       .use(externalLinks, {target: '_blank', rel: 'nofollow'})
