@@ -65,7 +65,7 @@ repository, organisation, or community you agree to abide by its terms.
 
 ## License
 
-[MIT][license] © [Titus Wormer][author]
+[MIT][license] © [Cédric Delpoux][author]
 
 [build-badge]: https://img.shields.io/travis/remarkjs/remark-external-links.svg
 
