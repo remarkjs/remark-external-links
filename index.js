@@ -26,7 +26,7 @@ function externalLinks(options) {
     var data
     var props
 
-    if (!relative.test(node.url)) {
+    if (node.url.charAt(0) !== '#' && !relative.test(node.url)) {
       data = node.data || (node.data = {})
       props = data.hProperties || (data.hProperties = {})
 
