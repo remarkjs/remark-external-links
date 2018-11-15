@@ -3,23 +3,16 @@
   "version": "3.0.0",
   "description": "Automatically adds the target and rel attributes to external links",
   "license": "MIT",
-  "keywords": [
-    "markdown",
-    "remark",
-    "plugin",
-    "link",
-    "url"
-  ],
+  "keywords": ["markdown", "remark", "plugin", "link", "url"],
   "repository": "remarkjs/remark-external-links",
   "bugs": "https://github.com/remarkjs/remark-external-links/issues",
   "author": "Cédric Delpoux <xuopled@gmail.com>",
   "contributors": [
     "Cédric Delpoux <xuopled@gmail.com>",
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+    "Merlijn Vos <merlijn@soverin.net>"
   ],
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "dependencies": {
     "space-separated-tokens": "^1.1.2",
     "unist-util-visit": "^1.4.0"
@@ -62,8 +55,6 @@
     "esnext": false
   },
   "remarkConfig": {
-    "plugins": [
-      "preset-wooorm"
-    ]
+    "plugins": ["preset-wooorm"]
   }
 }
