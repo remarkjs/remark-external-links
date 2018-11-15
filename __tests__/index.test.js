@@ -7,7 +7,8 @@ var externalLinks = require('..')
 var input = [
   '[remark](https://github.com/remarkjs/remark)',
   '',
-  '[relative link](./example.md)'
+  '[relative link](./example.md)',
+  '[fragment link](#fragment)'
 ].join('\n')
 
 test('should add the defaults when without options', function() {
