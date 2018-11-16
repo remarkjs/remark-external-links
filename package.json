@@ -15,7 +15,8 @@
   "author": "Cédric Delpoux <xuopled@gmail.com>",
   "contributors": [
     "Cédric Delpoux <xuopled@gmail.com>",
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+    "Merlijn Vos <merlijn@soverin.net>"
   ],
   "files": [
     "index.js"
