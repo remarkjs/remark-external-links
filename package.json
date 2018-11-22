@@ -30,7 +30,7 @@
     "prettier": "^1.14.2",
     "remark": "^10.0.0",
     "remark-cli": "^6.0.0",
-    "remark-html": "^8.0.0",
+    "remark-html": "^9.0.0",
     "remark-preset-wooorm": "^4.0.0",
     "xo": "^0.23.0"
   },
