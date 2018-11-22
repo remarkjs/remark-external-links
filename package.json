@@ -22,6 +22,7 @@
     "index.js"
   ],
   "dependencies": {
+    "mdast-util-definitions": "^1.2.3",
     "space-separated-tokens": "^1.1.2",
     "unist-util-visit": "^1.4.0"
   },

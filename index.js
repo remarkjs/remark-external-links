@@ -1,4 +1,5 @@
 var visit = require('unist-util-visit')
+var definitions = require('mdast-util-definitions')
 var spaceSeparated = require('space-separated-tokens').parse
 
 module.exports = externalLinks
@@ -19,23 +20,26 @@ function externalLinks(options) {
   return transform
 
   function transform(tree) {
-    visit(tree, 'link', visitor)
-  }
+    var definition = definitions(tree)
 
-  function visitor(node) {
-    var data
-    var props
+    visit(tree, ['link', 'linkReference'], visitor)
 
-    if (node.url.charAt(0) !== '#' && !relative.test(node.url)) {
-      data = node.data || (node.data = {})
-      props = data.hProperties || (data.hProperties = {})
+    function visitor(node) {
+      var ctx = node.type === 'link' ? node : definition(node.identifier)
+      var data
+      var props
 
-      if (target !== false) {
-        props.target = target || defaultTarget
-      }
+      if (ctx && ctx.url.charAt(0) !== '#' && !relative.test(ctx.url)) {
+        data = node.data || (node.data = {})
+        props = data.hProperties || (data.hProperties = {})
 
-      if (rel !== false) {
-        props.rel = (rel || defaultRel).concat()
+        if (target !== false) {
+          props.target = target || defaultTarget
+        }
+
+        if (rel !== false) {
+          props.rel = (rel || defaultRel).concat()
+        }
       }
     }
   }
