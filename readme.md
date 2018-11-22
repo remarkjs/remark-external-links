@@ -81,7 +81,7 @@ repository, organisation, or community you agree to abide by its terms.
 
 [license]: license
 
-[author]: http://xuopled.netlify.com
+[author]: https://xuopled.netlify.com
 
 [npm]: https://docs.npmjs.com/cli/install
 
