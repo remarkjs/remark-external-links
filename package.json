@@ -1,6 +1,6 @@
 {
   "name": "remark-external-links",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Automatically adds the target and rel attributes to external links",
   "license": "MIT",
   "keywords": [
