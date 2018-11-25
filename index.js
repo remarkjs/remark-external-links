@@ -1,10 +1,10 @@
 var visit = require('unist-util-visit')
 var definitions = require('mdast-util-definitions')
 var spaceSeparated = require('space-separated-tokens').parse
+var isAbsoluteURL = require('is-absolute-url')
 
 module.exports = externalLinks
 
-var relative = /^[^/]+\/[^/].*$|^\/[^/].*$/
 var defaultTarget = '_blank'
 var defaultRel = ['nofollow', 'noopener', 'noreferrer']
 
@@ -29,7 +29,7 @@ function externalLinks(options) {
       var data
       var props
 
-      if (ctx && ctx.url.charAt(0) !== '#' && !relative.test(ctx.url)) {
+      if (ctx && isAbsoluteURL(ctx.url)) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
 
