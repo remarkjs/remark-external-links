@@ -11,6 +11,8 @@ var input = [
   '',
   '[missing][], [local][], and [external][].',
   '',
+  '[current](.) [up](..) [relative link without ./](example.md)',
+  '',
   '[local]: #local',
   '[external]: https://github.com/remarkjs/remark'
 ].join('\n')

@@ -22,6 +22,7 @@
     "index.js"
   ],
   "dependencies": {
+    "is-absolute-url": "^2.1.0",
     "mdast-util-definitions": "^1.2.3",
     "space-separated-tokens": "^1.1.2",
     "unist-util-visit": "^1.4.0"
