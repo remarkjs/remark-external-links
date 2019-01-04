@@ -7,11 +7,13 @@ module.exports = externalLinks
 
 var defaultTarget = '_blank'
 var defaultRel = ['nofollow', 'noopener', 'noreferrer']
+var defaultProtocols = ['http', 'https']
 
 function externalLinks(options) {
   var opts = options || {}
   var target = opts.target
   var rel = opts.rel
+  var protocols = opts.protocols || defaultProtocols
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
@@ -29,7 +31,11 @@ function externalLinks(options) {
       var data
       var props
 
-      if (ctx && isAbsoluteURL(ctx.url)) {
+      if (
+        ctx &&
+        isAbsoluteURL(ctx.url) &&
+        protocols.includes(ctx.url.slice(0, ctx.url.indexOf(':')))
+      ) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
 

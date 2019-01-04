@@ -62,12 +62,17 @@ Pass `false` to not set `rel`s on links.
 > When using a `target`, add [`noopener` and `noreferrer`][mdn-a] to avoid
 > exploitation of the `window.opener` API.
 
+###### `options.protocols`
+
+Protocols used to filter against the [is-absolute](https://www.npmjs.com/package/is-absolute) package.
+(`Array.<string>`, default: `['http', 'https']`).
+
 ## Contribute
 
 See [`contributing.md` in `remarkjs/remark`][contributing] for ways to get
 started.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
+This organisation has a [Code of Conduct][coc]. By interacting with this
 repository, organisation, or community you agree to abide by its terms.
 
 ## License
@@ -75,39 +80,21 @@ repository, organisation, or community you agree to abide by its terms.
 [MIT][license] © [Cédric Delpoux][author]
 
 [build-badge]: https://img.shields.io/travis/remarkjs/remark-external-links.svg
-
 [build]: https://travis-ci.org/remarkjs/remark-external-links
-
 [coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-external-links.svg
-
 [coverage]: https://codecov.io/github/remarkjs/remark-external-links
-
 [downloads-badge]: https://img.shields.io/npm/dm/remark-external-links.svg
-
 [downloads]: https://www.npmjs.com/package/remark-external-links
-
 [chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
-
 [chat]: https://spectrum.chat/unified/remark
-
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
-
 [backers-badge]: https://opencollective.com/unified/backers/badge.svg
-
 [collective]: https://opencollective.com/unified
-
 [license]: license
-
 [author]: https://xuopled.netlify.com
-
 [npm]: https://docs.npmjs.com/cli/install
-
 [remark]: https://github.com/remarkjs/remark
-
 [contributing]: https://github.com/remarkjs/remark/blob/master/contributing.md
-
 [coc]: https://github.com/remarkjs/remark/blob/master/code-of-conduct.md
-
 [mdn-rel]: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
-
 [mdn-a]: https://developer.mozilla.org/en/docs/Web/HTML/Element/a
