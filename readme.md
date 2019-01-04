@@ -72,7 +72,7 @@ Protocols used to filter against the [is-absolute](https://www.npmjs.com/package
 See [`contributing.md` in `remarkjs/remark`][contributing] for ways to get
 started.
 
-This organisation has a [Code of Conduct][coc]. By interacting with this
+This organisation has a [Code of Conduct][coc].  By interacting with this
 repository, organisation, or community you agree to abide by its terms.
 
 ## License
