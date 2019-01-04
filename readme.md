@@ -62,6 +62,11 @@ Pass `false` to not set `rel`s on links.
 > When using a `target`, add [`noopener` and `noreferrer`][mdn-a] to avoid
 > exploitation of the `window.opener` API.
 
+###### `options.protocols`
+
+Allows additional protocols to be checked; such as `mailto:`, `tel:`, etc.
+(`Array.<string>`, default: `['http', 'https']`).
+
 ## Contribute
 
 See [`contributing.md` in `remarkjs/remark`][contributing] for ways to get
