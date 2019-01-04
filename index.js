@@ -28,14 +28,14 @@ function externalLinks(options) {
 
     function visitor(node) {
       var ctx = node.type === 'link' ? node : definition(node.identifier)
+
+      if (!ctx) return
+
+      var protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
       var data
       var props
 
-      if (
-        ctx &&
-        isAbsoluteURL(ctx.url) &&
-        protocols.includes(ctx.url.slice(0, ctx.url.indexOf(':')))
-      ) {
+      if (isAbsoluteURL(ctx.url) && protocols.indexOf(protocol) !== -1) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
 
