@@ -14,6 +14,7 @@ function externalLinks(options) {
   var target = opts.target
   var rel = opts.rel
   var protocols = opts.protocols || defaultProtocols
+  var content = opts.content
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
@@ -34,10 +35,12 @@ function externalLinks(options) {
       var protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
       var data
       var props
+      var children
 
       if (isAbsoluteURL(ctx.url) && protocols.indexOf(protocol) !== -1) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
+        children = data.hChildren || (data.hChildren = node.children)
 
         if (target !== false) {
           props.target = target || defaultTarget
@@ -45,6 +48,10 @@ function externalLinks(options) {
 
         if (rel !== false) {
           props.rel = (rel || defaultRel).concat()
+        }
+
+        if (content) {
+          children.push(content)
         }
       }
     }

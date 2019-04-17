@@ -27,6 +27,15 @@ exports[`should add both 1`] = `
 "
 `;
 
+exports[`should add content 1`] = `
+"<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark<span>(opens in a new window)</span></a></p>
+<p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
+<p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">external<span>(opens in a new window)</span></a>.</p>
+<p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
+<p><a href=\\"mailto:test@example.com\\">test@example.com</a></p>
+"
+`;
+
 exports[`should add default target or rel to mailto links 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark</a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>

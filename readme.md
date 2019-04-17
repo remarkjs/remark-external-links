@@ -27,7 +27,20 @@ var remark = require('remark')
 var externalLinks = require('remark-external-links')
 
 remark()
-  .use(externalLinks, {target: false, rel: ['nofollow']})
+  .use(externalLinks, {
+    target: false,
+    rel: ['nofollow'],
+    content: {
+      type: 'element',
+      tagName: 'span',
+      children: [
+        {
+          type: 'text',
+          value: '(opens in a new window)'
+        }
+      ]
+    }
+  })
   .use(html)
   .process('[remark](https://github.com/remarkjs/remark)', function(err, file) {
     if (err) throw err
@@ -38,7 +51,7 @@ remark()
 Now, running `node example` yields:
 
 ```html
-<p><a href="https://github.com/remarkjs/remark" rel="nofollow">remark</a></p>
+<p><a href="https://github.com/remarkjs/remark" rel="nofollow">remark (opens in a new window)</a></p>
 ```
 
 ## API
@@ -66,6 +79,12 @@ Pass `false` to not set `rel`s on links.
 
 Allows additional protocols to be checked; such as `mailto:`, `tel:`, etc.
 (`Array.<string>`, default: `['http', 'https']`).
+
+###### `options.content`
+
+[HAST](https://github.com/syntax-tree/hast) nodes to insert in the link (`Node|children`).
+
+Useful for improving accessibility by [giving users advanced warning when opening a new window](https://www.w3.org/WAI/WCAG21/Techniques/general/G201).
 
 ## Contribute
 

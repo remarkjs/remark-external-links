@@ -78,3 +78,24 @@ test('should add default target or rel to mailto links', function() {
       .toString()
   ).toMatchSnapshot()
 })
+
+test('should add content', function() {
+  expect(
+    remark()
+      .use(externalLinks, {
+        content: {
+          type: 'element',
+          tagName: 'span',
+          children: [
+            {
+              type: 'text',
+              value: '(opens in a new window)'
+            }
+          ]
+        }
+      })
+      .use(html)
+      .processSync(input)
+      .toString()
+  ).toMatchSnapshot()
+})
