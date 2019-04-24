@@ -81,7 +81,7 @@ test('should add default target or rel to mailto links', function() {
   ).toMatchSnapshot()
 })
 
-test('should add content', function() {
+test('should add HAST node as content', function() {
   expect(
     remark()
       .use(externalLinks, {
@@ -95,6 +95,39 @@ test('should add content', function() {
             }
           ]
         }
+      })
+      .use(html)
+      .processSync(input)
+      .toString()
+  ).toMatchSnapshot()
+})
+
+test('should add array of HAST nodes as content', function() {
+  expect(
+    remark()
+      .use(externalLinks, {
+        content: [
+          {
+            type: 'element',
+            tagName: 'span',
+            children: [
+              {
+                type: 'text',
+                value: '1'
+              }
+            ]
+          },
+          {
+            type: 'element',
+            tagName: 'span',
+            children: [
+              {
+                type: 'text',
+                value: '2'
+              }
+            ]
+          }
+        ]
       })
       .use(html)
       .processSync(input)

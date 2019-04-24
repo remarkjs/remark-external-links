@@ -40,7 +40,7 @@ function externalLinks(options) {
       if (isAbsoluteURL(ctx.url) && protocols.indexOf(protocol) !== -1) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
-        children = node.children || (node.children = [])
+        children = node.children
 
         if (target !== false) {
           props.target = target || defaultTarget
@@ -51,10 +51,13 @@ function externalLinks(options) {
         }
 
         if (content) {
-          children.push({
-            type: 'literal',
-            value: content
-          })
+          var hChildren = Array.isArray(content) ? content : [content]
+          for (var i = 0; i < hChildren.length; i++) {
+            children.push({
+              type: 'literal',
+              value: hChildren[i]
+            })
+          }
         }
       }
     }
