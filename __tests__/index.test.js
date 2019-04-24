@@ -7,6 +7,8 @@ var externalLinks = require('..')
 var input = [
   '[remark](https://github.com/remarkjs/remark)',
   '',
+  '[remark with <em>markup</em>](https://github.com/remarkjs/remark)',
+  '',
   '[relative link](./example.md) and [fragment link](#fragment)',
   '',
   '[missing][], [local][], and [external][].',

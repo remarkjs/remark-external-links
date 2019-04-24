@@ -40,7 +40,7 @@ function externalLinks(options) {
       if (isAbsoluteURL(ctx.url) && protocols.indexOf(protocol) !== -1) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
-        children = data.hChildren || (data.hChildren = node.children)
+        children = node.children || (node.children = [])
 
         if (target !== false) {
           props.target = target || defaultTarget
@@ -51,7 +51,10 @@ function externalLinks(options) {
         }
 
         if (content) {
-          children.push(content)
+          children.push({
+            type: 'literal',
+            value: content
+          })
         }
       }
     }

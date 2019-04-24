@@ -2,6 +2,7 @@
 
 exports[`should add a rel 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" rel=\\"nofollow\\">remark</a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\" rel=\\"nofollow\\">remark with <em>markup</em></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" rel=\\"nofollow\\">external</a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
@@ -11,6 +12,7 @@ exports[`should add a rel 1`] = `
 
 exports[`should add a target 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\">remark</a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\">remark with <em>markup</em></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\">external</a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
@@ -20,6 +22,7 @@ exports[`should add a target 1`] = `
 
 exports[`should add both 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow\\">remark</a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow\\">remark with <em>markup</em></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow\\">external</a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
@@ -29,6 +32,7 @@ exports[`should add both 1`] = `
 
 exports[`should add content 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark<span>(opens in a new window)</span></a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark with <em>markup</em><span>(opens in a new window)</span></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">external<span>(opens in a new window)</span></a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
@@ -38,6 +42,7 @@ exports[`should add content 1`] = `
 
 exports[`should add default target or rel to mailto links 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark</a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark with <em>markup</em></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">external</a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
@@ -47,6 +52,7 @@ exports[`should add default target or rel to mailto links 1`] = `
 
 exports[`should add the defaults when without options 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark</a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">remark with <em>markup</em></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\" target=\\"_blank\\" rel=\\"nofollow noopener noreferrer\\">external</a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
@@ -56,6 +62,7 @@ exports[`should add the defaults when without options 1`] = `
 
 exports[`should do nothing if both are set to false 1`] = `
 "<p><a href=\\"https://github.com/remarkjs/remark\\">remark</a></p>
+<p><a href=\\"https://github.com/remarkjs/remark\\">remark with <em>markup</em></a></p>
 <p><a href=\\"./example.md\\">relative link</a> and <a href=\\"#fragment\\">fragment link</a></p>
 <p>[missing][], <a href=\\"#local\\">local</a>, and <a href=\\"https://github.com/remarkjs/remark\\">external</a>.</p>
 <p><a href=\\".\\">current</a> <a href=\\"..\\">up</a> <a href=\\"example.md\\">relative link without ./</a></p>
