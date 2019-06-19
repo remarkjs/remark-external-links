@@ -1,12 +1,15 @@
 {
   "name": "remark-external-links",
   "version": "4.0.0",
-  "description": "Automatically adds the target and rel attributes to external links",
+  "description": "remark plugin to automatically add target and rel attributes to external links",
   "license": "MIT",
   "keywords": [
-    "markdown",
+    "unified",
     "remark",
     "plugin",
+    "mdast",
+    "markdown",
+    "external",
     "link",
     "url"
   ],
@@ -16,7 +19,10 @@
   "contributors": [
     "Cédric Delpoux <xuopled@gmail.com>",
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
-    "Merlijn Vos <merlijn@soverin.net>"
+    "Merlijn Vos <merlijn@soverin.net>",
+    "Takayosi Amagi <fand.gmork@gmail.com>",
+    "Zach Schnackel <info@zslabs.com>",
+    "Tsuyusato Kitsune <make.just.on@gmail.com>"
   ],
   "files": [
     "index.js"
