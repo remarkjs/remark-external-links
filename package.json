@@ -34,29 +34,26 @@
     "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0",
-    "prettier": "^1.14.2",
+    "nyc": "^14.0.0",
+    "prettier": "^1.0.0",
     "remark": "^10.0.0",
     "remark-cli": "^6.0.0",
     "remark-html": "^9.0.0",
     "remark-preset-wooorm": "^5.0.0",
+    "tape": "^4.0.0",
     "xo": "^0.24.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
-    "test-api": "jest",
-    "test-coverage": "jest --collectCoverage",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
     "test": "npm run format && npm run test-coverage"
   },
-  "jest": {
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    }
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
   },
   "prettier": {
     "tabWidth": 2,
