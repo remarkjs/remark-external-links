@@ -2,6 +2,7 @@ var visit = require('unist-util-visit')
 var definitions = require('mdast-util-definitions')
 var spaceSeparated = require('space-separated-tokens').parse
 var isAbsoluteURL = require('is-absolute-url')
+var extend = require('extend')
 
 module.exports = externalLinks
 
@@ -14,9 +15,14 @@ function externalLinks(options) {
   var target = opts.target
   var rel = opts.rel
   var protocols = opts.protocols || defaultProtocols
+  var content = opts.content
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
+  }
+
+  if (content && typeof content === 'object' && !('length' in content)) {
+    content = [content]
   }
 
   return transform
@@ -45,6 +51,17 @@ function externalLinks(options) {
 
         if (rel !== false) {
           props.rel = (rel || defaultRel).concat()
+        }
+
+        if (content) {
+          // `fragment` is not a known mdast node, but unknown nodes with
+          // children are handled as elements by `mdast-util-to-hast`:
+          // See: <https://github.com/syntax-tree/mdast-util-to-hast#notes>.
+          node.children.push({
+            type: 'fragment',
+            children: [],
+            data: {hName: 'span', hChildren: extend(true, content)}
+          })
         }
       }
     }

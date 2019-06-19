@@ -24,8 +24,8 @@ npm install remark-external-links
 Say we have the following file, `example.js`:
 
 ```js
-var html = require('remark-html')
 var remark = require('remark')
+var html = require('remark-html')
 var externalLinks = require('remark-external-links')
 
 remark()
@@ -70,6 +70,15 @@ Pass `false` to not set `rel`s on links.
 
 Protocols to check, such as `mailto` or `tel` (`Array.<string>`, default:
 `['http', 'https']`).
+
+###### `options.content`
+
+[**hast**][hast] content to insert at the end of external links
+([**Node**][node] or [**Children**][children]).
+Will be inserted in a `<span>` element.
+
+Useful for improving accessibility by [giving users advanced warning when
+opening a new window][g201].
 
 ## Contribute
 
@@ -132,3 +141,11 @@ abide by its terms.
 [mdn-rel]: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
 
 [mdn-a]: https://developer.mozilla.org/en/docs/Web/HTML/Element/a
+
+[hast]: https://github.com/syntax-tree/hast
+
+[node]: https://github.com/syntax-tree/hast#nodes
+
+[children]: https://github.com/syntax-tree/unist#child
+
+[g201]: https://www.w3.org/WAI/WCAG21/Techniques/general/G201

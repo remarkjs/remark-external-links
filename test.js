@@ -121,5 +121,52 @@ test('remark-external-links', function(t) {
     'should add a target'
   )
 
+  t.equal(
+    remark()
+      .use(externalLinks, {
+        content: {type: 'text', value: ' (opens in a new window)'}
+      })
+      .use(html)
+      .processSync(input)
+      .toString(),
+    [
+      '<p><a href="https://github.com/remarkjs/remark" target="_blank" rel="nofollow noopener noreferrer">remark<span> (opens in a new window)</span></a></p>',
+      '<p><a href="./example.md">relative link</a> and <a href="#fragment">fragment link</a></p>',
+      '<p>[missing][], <a href="#local">local</a>, and <a href="https://github.com/remarkjs/remark" target="_blank" rel="nofollow noopener noreferrer">external<span> (opens in a new window)</span></a>.</p>',
+      '<p><a href=".">current</a> <a href="..">up</a> <a href="example.md">relative link without ./</a></p>',
+      '<p><a href="mailto:test@example.com">test@example.com</a></p>',
+      ''
+    ].join('\n'),
+    'should add hast node as content'
+  )
+
+  t.equal(
+    remark()
+      .use(externalLinks, {
+        content: [
+          {type: 'text', value: ' ('},
+          {
+            type: 'element',
+            tagName: 'em',
+            properties: {},
+            children: [{type: 'text', value: 'opens in a new window'}]
+          },
+          {type: 'text', value: ')'}
+        ]
+      })
+      .use(html)
+      .processSync(input)
+      .toString(),
+    [
+      '<p><a href="https://github.com/remarkjs/remark" target="_blank" rel="nofollow noopener noreferrer">remark<span> (<em>opens in a new window</em>)</span></a></p>',
+      '<p><a href="./example.md">relative link</a> and <a href="#fragment">fragment link</a></p>',
+      '<p>[missing][], <a href="#local">local</a>, and <a href="https://github.com/remarkjs/remark" target="_blank" rel="nofollow noopener noreferrer">external<span> (<em>opens in a new window</em>)</span></a>.</p>',
+      '<p><a href=".">current</a> <a href="..">up</a> <a href="example.md">relative link without ./</a></p>',
+      '<p><a href="mailto:test@example.com">test@example.com</a></p>',
+      ''
+    ].join('\n'),
+    'should add hast children as content'
+  )
+
   t.end()
 })
