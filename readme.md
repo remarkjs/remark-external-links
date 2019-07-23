@@ -80,6 +80,18 @@ Will be inserted in a `<span>` element.
 Useful for improving accessibility by [giving users advanced warning when
 opening a new window][g201].
 
+## Security
+
+`options.content` is used and injected into the tree when it’s given.
+This could open you up to a [cross-site scripting (XSS)][xss] attack if you pass
+user provided content in.
+
+This may become a problem if the Markdown later transformed to
+[**rehype**][rehype] ([**hast**][hast]) or opened in an unsafe Markdown viewer.
+
+Most likely though, this plugin will instead protect you from exploitation of
+the `window.opener` API.
+
 ## Contribute
 
 See [`contributing.md`][contributing] in [`remarkjs/.github`][health] for ways
@@ -149,3 +161,7 @@ abide by its terms.
 [children]: https://github.com/syntax-tree/unist#child
 
 [g201]: https://www.w3.org/WAI/WCAG21/Techniques/general/G201
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[rehype]: https://github.com/rehypejs/rehype
