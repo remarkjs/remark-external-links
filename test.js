@@ -18,13 +18,9 @@ var input = [
   '<mailto:test@example.com>'
 ].join('\n')
 
-test('remark-external-links', function(t) {
+test('remark-external-links', function (t) {
   t.equal(
-    remark()
-      .use(externalLinks)
-      .use(html)
-      .processSync(input)
-      .toString(),
+    remark().use(externalLinks).use(html).processSync(input).toString(),
     [
       '<p><a href="https://github.com/remarkjs/remark" target="_blank" rel="nofollow noopener noreferrer">remark</a></p>',
       '<p><a href="./example.md">relative link</a> and <a href="#fragment">fragment link</a></p>',

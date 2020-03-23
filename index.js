@@ -11,11 +11,11 @@ var defaultRel = ['nofollow', 'noopener', 'noreferrer']
 var defaultProtocols = ['http', 'https']
 
 function externalLinks(options) {
-  var opts = options || {}
-  var target = opts.target
-  var rel = opts.rel
-  var protocols = opts.protocols || defaultProtocols
-  var content = opts.content
+  var settings = options || {}
+  var target = settings.target
+  var rel = settings.rel
+  var protocols = settings.protocols || defaultProtocols
+  var content = settings.content
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
