@@ -1,7 +1,7 @@
 var visit = require('unist-util-visit')
 var definitions = require('mdast-util-definitions')
 var spaceSeparated = require('space-separated-tokens').parse
-var isAbsoluteURL = require('is-absolute-url')
+var absolute = require('is-absolute-url')
 var extend = require('extend')
 
 module.exports = externalLinks
@@ -34,14 +34,15 @@ function externalLinks(options) {
 
     function visitor(node) {
       var ctx = node.type === 'link' ? node : definition(node.identifier)
-
-      if (!ctx) return
-
-      var protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
+      var protocol
       var data
       var props
 
-      if (isAbsoluteURL(ctx.url) && protocols.indexOf(protocol) !== -1) {
+      if (!ctx) return
+
+      protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
+
+      if (absolute(ctx.url) && protocols.indexOf(protocol) !== -1) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
 
