@@ -16,6 +16,7 @@ function externalLinks(options) {
   var rel = settings.rel
   var protocols = settings.protocols || defaultProtocols
   var content = settings.content
+  var contentProperties = settings.contentProperties || {}
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
@@ -61,7 +62,11 @@ function externalLinks(options) {
           node.children.push({
             type: 'fragment',
             children: [],
-            data: {hName: 'span', hChildren: extend(true, content)}
+            data: {
+              hName: 'span',
+              hProperties: extend(true, contentProperties),
+              hChildren: extend(true, content)
+            }
           })
         }
       }
