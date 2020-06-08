@@ -62,7 +62,11 @@ function externalLinks(options) {
           node.children.push({
             type: 'fragment',
             children: [],
-            data: {hName: 'span', hProperties: extend(true, contentProperties), hChildren: extend(true, content)}
+            data: {
+              hName: 'span',
+              hProperties: extend(true, contentProperties),
+              hChildren: extend(true, content)
+            }
           })
         }
       }
