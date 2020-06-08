@@ -80,6 +80,11 @@ Will be inserted in a `<span>` element.
 Useful for improving accessibility by [giving users advanced warning when
 opening a new window][g201].
 
+###### `options.contentProperties`
+
+[`Properties`][properties] to add to the `span` wrapping `content`, when
+given.
+
 ## Security
 
 `options.content` is used and injected into the tree when it’s given.
@@ -155,6 +160,8 @@ abide by its terms.
 [mdn-a]: https://developer.mozilla.org/en/docs/Web/HTML/Element/a
 
 [hast]: https://github.com/syntax-tree/hast
+
+[properties]: https://github.com/syntax-tree/hast#properties
 
 [node]: https://github.com/syntax-tree/hast#nodes
 
