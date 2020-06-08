@@ -164,5 +164,21 @@ test('remark-external-links', function (t) {
     'should add hast children as content'
   )
 
+  t.equal(
+    remark()
+      .use(externalLinks, {
+        contentProperties: {className: ['alpha', 'bravo']},
+        content: {type: 'text', value: ' (opens in a new window)'}
+      })
+      .use(html)
+      .processSync('[a](https://example.com)')
+      .toString(),
+    [
+      '<p><a href="https://example.com" target="_blank" rel="nofollow noopener noreferrer">a<span class="alpha bravo"> (opens in a new window)</span></a></p>',
+      ''
+    ].join('\n'),
+    'should support `contentProperties`'
+  )
+
   t.end()
 })
