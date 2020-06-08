@@ -37,18 +37,18 @@
     "extend": "^3.0.0",
     "is-absolute-url": "^3.0.0",
     "mdast-util-definitions": "^2.0.0",
-    "space-separated-tokens": "^1.1.2",
+    "space-separated-tokens": "^1.0.0",
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
     "nyc": "^15.0.0",
     "prettier": "^2.0.0",
-    "remark": "^11.0.0",
-    "remark-cli": "^7.0.0",
-    "remark-html": "^10.0.0",
-    "remark-preset-wooorm": "^6.0.0",
-    "tape": "^4.0.0",
-    "xo": "^0.28.0"
+    "remark": "^12.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-html": "^11.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
+    "xo": "^0.32.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
