@@ -9,7 +9,7 @@ interface RemarkExternalLinksOptions {
    * or `_top`, default: `_blank`).
    * Pass `false` to not set `target`s on links.
    */
-  target?: string | false
+  target?: '_self' | '_blank' | '_parent' | '_top' | false
   /**
    * [Link types][mdn-rel] to hint about the referenced documents (`Array.<string>`
    * or `string`, default: `['nofollow', 'noopener', 'noreferrer']`).
