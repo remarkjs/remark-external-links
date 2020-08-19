@@ -50,8 +50,13 @@ declare namespace remarkExternalLinks {
     /**
      * [`Properties`][properties] to add to the `span` wrapping `content`, when
      * given.
+     *
+     * Reference: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/73e5ee37847e0ad313459222642db3eed1e985b7/types/hast/index.d.ts#L72-L77
      */
-    contentProperties?: Record<string, string>
+    contentProperties?: Record<
+      string,
+      boolean | number | string | null | undefined | Array<string | number>
+    >
   }
 }
 
