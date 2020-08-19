@@ -8,6 +8,8 @@ interface RemarkExternalLinksOptions {
    * How to display referenced documents (`string?`: `_self`, `_blank`, `_parent`,
    * or `_top`, default: `_blank`).
    * Pass `false` to not set `target`s on links.
+   *
+   * @defaultValue '_blank'
    */
   target?: '_self' | '_blank' | '_parent' | '_top' | false
   /**
