@@ -19,6 +19,8 @@ interface RemarkExternalLinksOptions {
    * > exploitation of the `window.opener` API.
    *
    * [mdn-rel]: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
+   *
+   * @defaultValue ['nofollow', 'noopener', 'noreferrer']
    */
   rel?: string[] | string
   /**
