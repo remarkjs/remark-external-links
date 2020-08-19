@@ -78,7 +78,8 @@
     "prettier": true,
     "esnext": false,
     "rules": {
-      "unicorn/prefer-includes": "off"
+      "unicorn/prefer-includes": "off",
+      "import/no-extraneous-dependencies": "off"
     }
   },
   "remarkConfig": {
