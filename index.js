@@ -17,6 +17,7 @@ function externalLinks(options) {
   var protocols = settings.protocols || defaultProtocols
   var content = settings.content
   var contentProperties = settings.contentProperties || {}
+  var transformChildren = settings.transformChildren
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
@@ -53,6 +54,10 @@ function externalLinks(options) {
 
         if (rel !== false) {
           props.rel = (rel || defaultRel).concat()
+        }
+        
+        if (typeof transformChildren === 'function') {
+          node.children = transformChildren(node.children)
         }
 
         if (content) {
