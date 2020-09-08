@@ -15,7 +15,6 @@ function externalLinks(options) {
   var target = settings.target
   var rel = settings.rel
   var protocols = settings.protocols || defaultProtocols
-  var content = settings.content
   var contentProperties = settings.contentProperties || {}
   var transformChildren = settings.transformChildren
 
@@ -47,6 +46,12 @@ function externalLinks(options) {
       if (absolute(ctx.url) && protocols.indexOf(protocol) !== -1) {
         data = node.data || (node.data = {})
         props = data.hProperties || (data.hProperties = {})
+        
+        let content = typeof settings.content === 'function' ? settings.content(ctx.url) : settings.content
+
+        if (typeof content === 'object' && !('length' in content)) {
+          content = [content]
+        }
 
         if (target !== false) {
           props.target = target || defaultTarget
