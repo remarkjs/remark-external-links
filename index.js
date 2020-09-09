@@ -23,10 +23,6 @@ function externalLinks(options) {
     rel = spaceSeparated(rel)
   }
 
-  if (content && typeof content === 'object' && !('length' in content)) {
-    content = [content]
-  }
-
   return transform
 
   function transform(tree) {
