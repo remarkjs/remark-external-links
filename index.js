@@ -17,6 +17,7 @@ function externalLinks(options) {
   var protocols = settings.protocols || defaultProtocols
   var contentProperties = settings.contentProperties || {}
   var transformChildren = settings.transformChildren
+  var beforeContent = settings.beforeContent
 
   if (typeof rel === 'string') {
     rel = spaceSeparated(rel)
@@ -69,6 +70,10 @@ function externalLinks(options) {
           // `fragment` is not a known mdast node, but unknown nodes with
           // children are handled as elements by `mdast-util-to-hast`:
           // See: <https://github.com/syntax-tree/mdast-util-to-hast#notes>.
+          if (beforeContent) {
+            node.children.push(beforeContent)
+          }
+          
           node.children.push({
             type: 'fragment',
             children: [],
