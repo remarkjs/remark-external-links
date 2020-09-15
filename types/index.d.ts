@@ -27,7 +27,7 @@ declare namespace remarkExternalLinks {
      *
      * @defaultValue ['nofollow', 'noopener', 'noreferrer']
      */
-    rel?: string[] | string | boolean
+    rel?: string[] | string | false
     /**
      * Protocols to check, such as `mailto` or `tel` (`Array.<string>`, default:
      * `['http', 'https']`).
