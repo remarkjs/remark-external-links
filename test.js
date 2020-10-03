@@ -15,7 +15,7 @@ var input = [
   '[local]: #local',
   '[external]: https://github.com/remarkjs/remark',
   '',
-  '<mailto:test@example.com>'
+  '<test@example.com>'
 ].join('\n')
 
 test('remark-external-links', function (t) {

@@ -29,7 +29,7 @@ function externalLinks(options) {
   return transform
 
   function transform(tree) {
-    var definition = definitions(tree)
+    var definition = definitions(tree, {commonmark: true})
 
     visit(tree, ['link', 'linkReference'], visitor)
 
@@ -39,6 +39,8 @@ function externalLinks(options) {
       var data
       var props
 
+      /* istanbul ignore if - undefined references can be injected into the tree
+       * by plugins. */
       if (!ctx) return
 
       protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
