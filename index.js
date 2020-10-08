@@ -29,7 +29,7 @@ function externalLinks(options) {
   return transform
 
   function transform(tree) {
-    var definition = definitions(tree, {commonmark: true})
+    var definition = definitions(tree)
 
     visit(tree, ['link', 'linkReference'], visitor)
 
