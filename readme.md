@@ -120,9 +120,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/remarkjs/remark-external-links/main.svg
+[build-badge]: https://github.com/remarkjs/remark-external-links/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/remarkjs/remark-external-links
+[build]: https://github.com/remarkjs/remark-external-links/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-external-links.svg
 
