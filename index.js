@@ -1,16 +1,14 @@
-var visit = require('unist-util-visit')
-var definitions = require('mdast-util-definitions')
-var spaceSeparated = require('space-separated-tokens').parse
-var absolute = require('is-absolute-url')
-var extend = require('extend')
-
-module.exports = externalLinks
+import visit from 'unist-util-visit'
+import definitions from 'mdast-util-definitions'
+import spaceSeparated from 'space-separated-tokens'
+import absolute from 'is-absolute-url'
+import extend from 'extend'
 
 var defaultTarget = '_blank'
 var defaultRel = ['nofollow', 'noopener', 'noreferrer']
 var defaultProtocols = ['http', 'https']
 
-function externalLinks(options) {
+export default function remarkExternalLinks(options) {
   var settings = options || {}
   var target = settings.target
   var rel = settings.rel
@@ -19,7 +17,7 @@ function externalLinks(options) {
   var contentProperties = settings.contentProperties || {}
 
   if (typeof rel === 'string') {
-    rel = spaceSeparated(rel)
+    rel = spaceSeparated.parse(rel)
   }
 
   if (content && typeof content === 'object' && !('length' in content)) {

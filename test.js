@@ -1,7 +1,7 @@
-var test = require('tape')
-var remark = require('remark')
-var html = require('remark-html')
-var externalLinks = require('.')
+import test from 'tape'
+import remark from 'remark'
+import html from 'remark-html'
+import externalLinks from './index.js'
 
 var input = [
   '[remark](https://github.com/remarkjs/remark)',

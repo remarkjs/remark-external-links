@@ -30,10 +30,11 @@
     "Tsuyusato Kitsune <make.just.on@gmail.com>",
     "Matsuko Friedland <info@matsuko.ca>"
   ],
-  "types": "types/index.d.ts",
+  "sideEffects": false,
+  "type": "module",
+  "main": "index.js",
   "files": [
-    "index.js",
-    "types/index.d.ts"
+    "index.js"
   ],
   "dependencies": {
     "extend": "^3.0.0",
@@ -72,9 +73,14 @@
     "prettier": true,
     "esnext": false,
     "rules": {
+      "no-var": "off",
+      "prefer-arrow-callback": "off",
       "unicorn/prefer-includes": "off",
       "import/no-extraneous-dependencies": "off"
-    }
+    },
+    "ignore": [
+      "types/"
+    ]
   },
   "remarkConfig": {
     "plugins": [
