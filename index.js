@@ -1,6 +1,6 @@
-import visit from 'unist-util-visit'
-import definitions from 'mdast-util-definitions'
-import spaceSeparated from 'space-separated-tokens'
+import {visit} from 'unist-util-visit'
+import {definitions} from 'mdast-util-definitions'
+import {parse} from 'space-separated-tokens'
 import absolute from 'is-absolute-url'
 import extend from 'extend'
 
@@ -17,7 +17,7 @@ export default function remarkExternalLinks(options) {
   var contentProperties = settings.contentProperties || {}
 
   if (typeof rel === 'string') {
-    rel = spaceSeparated.parse(rel)
+    rel = parse(rel)
   }
 
   if (content && typeof content === 'object' && !('length' in content)) {
