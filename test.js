@@ -3,7 +3,7 @@ import {remark} from 'remark'
 import html from 'remark-html'
 import externalLinks from './index.js'
 
-var input = [
+const input = [
   '[remark](https://github.com/remarkjs/remark)',
   '',
   '[relative link](./example.md) and [fragment link](#fragment)',
@@ -18,7 +18,7 @@ var input = [
   '<test@example.com>'
 ].join('\n')
 
-test('remark-external-links', function (t) {
+test('remark-external-links', (t) => {
   t.equal(
     remark().use(externalLinks).use(html).processSync(input).toString(),
     [

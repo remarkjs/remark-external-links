@@ -4,17 +4,17 @@ import {parse} from 'space-separated-tokens'
 import absolute from 'is-absolute-url'
 import extend from 'extend'
 
-var defaultTarget = '_blank'
-var defaultRel = ['nofollow', 'noopener', 'noreferrer']
-var defaultProtocols = ['http', 'https']
+const defaultTarget = '_blank'
+const defaultRel = ['nofollow', 'noopener', 'noreferrer']
+const defaultProtocols = ['http', 'https']
 
 export default function remarkExternalLinks(options) {
-  var settings = options || {}
-  var target = settings.target
-  var rel = settings.rel
-  var protocols = settings.protocols || defaultProtocols
-  var content = settings.content
-  var contentProperties = settings.contentProperties || {}
+  const settings = options || {}
+  const target = settings.target
+  let rel = settings.rel
+  const protocols = settings.protocols || defaultProtocols
+  let content = settings.content
+  const contentProperties = settings.contentProperties || {}
 
   if (typeof rel === 'string') {
     rel = parse(rel)
@@ -27,25 +27,22 @@ export default function remarkExternalLinks(options) {
   return transform
 
   function transform(tree) {
-    var definition = definitions(tree)
+    const definition = definitions(tree)
 
     visit(tree, ['link', 'linkReference'], visitor)
 
     function visitor(node) {
-      var ctx = node.type === 'link' ? node : definition(node.identifier)
-      var protocol
-      var data
-      var props
+      const ctx = node.type === 'link' ? node : definition(node.identifier)
 
       // Undefined references can be injected into the tree by plugins.
       /* c8 ignore next */
       if (!ctx) return
 
-      protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
+      const protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
 
-      if (absolute(ctx.url) && protocols.indexOf(protocol) !== -1) {
-        data = node.data || (node.data = {})
-        props = data.hProperties || (data.hProperties = {})
+      if (absolute(ctx.url) && protocols.includes(protocol)) {
+        const data = node.data || (node.data = {})
+        const props = data.hProperties || (data.hProperties = {})
 
         if (target !== false) {
           props.target = target || defaultTarget
