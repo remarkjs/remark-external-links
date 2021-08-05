@@ -39,8 +39,8 @@ function externalLinks(options) {
       var data
       var props
 
-      /* istanbul ignore if - undefined references can be injected into the tree
-       * by plugins. */
+      // Undefined references can be injected into the tree by plugins.
+      /* c8 ignore next */
       if (!ctx) return
 
       protocol = ctx.url.slice(0, ctx.url.indexOf(':'))
