@@ -20,6 +20,9 @@ previous versions of remark.
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -31,15 +34,15 @@ npm install remark-external-links
 Say we have the following file, `example.js`:
 
 ```js
-var remark = require('remark')
-var html = require('remark-html')
-var externalLinks = require('remark-external-links')
+import {remark} from 'remark'
+import remarkHtml from 'remark-html'
+import remarkExternalLinks from 'remark-external-links'
 
 remark()
-  .use(externalLinks, {target: false, rel: ['nofollow']})
-  .use(html)
-  .process('[remark](https://github.com/remarkjs/remark)', function(err, file) {
-    if (err) throw err
+  .use(remarkExternalLinks, {target: false, rel: ['nofollow']})
+  .use(remarkHtml)
+  .process('[remark](https://github.com/remarkjs/remark)')
+  .then((file) => {
     console.log(String(file))
   })
 ```
@@ -52,7 +55,10 @@ Now, running `node example` yields:
 
 ## API
 
-### `remark().use(externalLinks[, options])`
+This package exports no identifiers.
+The default export is `remarkExternalLinks`.
+
+### `unified().use(remarkExternalLinks[, options])`
 
 Automatically add `target` and `rel` attributes to external links.
 
