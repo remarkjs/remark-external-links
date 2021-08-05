@@ -1,5 +1,5 @@
 import test from 'tape'
-import remark from 'remark'
+import {remark} from 'remark'
 import html from 'remark-html'
 import externalLinks from './index.js'
 
