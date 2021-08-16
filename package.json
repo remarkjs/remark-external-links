@@ -1,19 +1,9 @@
 {
   "name": "remark-external-links",
   "version": "9.0.0",
-  "description": "remark plugin to automatically add target and rel attributes to external links",
+  "description": "Legacy remark plugin to automatically add target and rel attributes to external links — please use `rehype-external-links`",
   "license": "MIT",
-  "keywords": [
-    "unified",
-    "remark",
-    "remark-plugin",
-    "plugin",
-    "mdast",
-    "markdown",
-    "external",
-    "link",
-    "url"
-  ],
+  "keywords": [],
   "repository": "remarkjs/remark-external-links",
   "bugs": "https://github.com/remarkjs/remark-external-links/issues",
   "funding": {
